@@ -39,6 +39,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.back = new MetroFramework.Controls.MetroButton();
             this.forward = new MetroFramework.Controls.MetroButton();
+            this.wikiChangeButton = new MetroFramework.Controls.MetroButton();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.file = new MetroFramework.Controls.MetroLabel();
@@ -47,7 +48,6 @@
             this.linkLabel = new MetroFramework.Controls.MetroLabel();
             this.wikiText = new System.Windows.Forms.RichTextBox();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.wikiChangeButton = new MetroFramework.Controls.MetroButton();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager1)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
@@ -162,6 +162,17 @@
             this.forward.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.forward.Click += new System.EventHandler(this.forward_Click);
             // 
+            // wikiChangeButton
+            // 
+            this.wikiChangeButton.Enabled = false;
+            this.wikiChangeButton.Location = new System.Drawing.Point(3, 160);
+            this.wikiChangeButton.Name = "wikiChangeButton";
+            this.wikiChangeButton.Size = new System.Drawing.Size(115, 23);
+            this.wikiChangeButton.TabIndex = 13;
+            this.wikiChangeButton.Text = "Change Wiki";
+            this.wikiChangeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.wikiChangeButton.Click += new System.EventHandler(this.wikiChangeButton_Click);
+            // 
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.AutoSize = true;
@@ -241,6 +252,7 @@
             this.wikiText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wikiText.ForeColor = System.Drawing.SystemColors.Highlight;
             this.wikiText.Location = new System.Drawing.Point(3, 277);
+            this.wikiText.MaxLength = 475;
             this.wikiText.Name = "wikiText";
             this.wikiText.Size = new System.Drawing.Size(482, 46);
             this.wikiText.TabIndex = 11;
@@ -253,17 +265,6 @@
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
             this.flowLayoutPanel4.Size = new System.Drawing.Size(8, 8);
             this.flowLayoutPanel4.TabIndex = 12;
-            // 
-            // wikiChangeButton
-            // 
-            this.wikiChangeButton.Enabled = false;
-            this.wikiChangeButton.Location = new System.Drawing.Point(3, 160);
-            this.wikiChangeButton.Name = "wikiChangeButton";
-            this.wikiChangeButton.Size = new System.Drawing.Size(115, 23);
-            this.wikiChangeButton.TabIndex = 13;
-            this.wikiChangeButton.Text = "Change Wiki";
-            this.wikiChangeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
-            this.wikiChangeButton.Click += new System.EventHandler(this.wikiChangeButton_Click);
             // 
             // Form1
             // 
