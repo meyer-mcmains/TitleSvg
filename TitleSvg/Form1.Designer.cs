@@ -169,7 +169,7 @@
             this.wikiChangeButton.Name = "wikiChangeButton";
             this.wikiChangeButton.Size = new System.Drawing.Size(115, 23);
             this.wikiChangeButton.TabIndex = 13;
-            this.wikiChangeButton.Text = "Change Wiki";
+            this.wikiChangeButton.Text = "Change Text";
             this.wikiChangeButton.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.wikiChangeButton.Click += new System.EventHandler(this.wikiChangeButton_Click);
             // 
@@ -226,16 +226,16 @@
             this.wikiLabel.FontWeight = MetroFramework.MetroLabelWeight.Bold;
             this.wikiLabel.Location = new System.Drawing.Point(3, 249);
             this.wikiLabel.Name = "wikiLabel";
-            this.wikiLabel.Size = new System.Drawing.Size(55, 25);
+            this.wikiLabel.Size = new System.Drawing.Size(53, 25);
             this.wikiLabel.TabIndex = 10;
-            this.wikiLabel.Text = "Wiki:";
+            this.wikiLabel.Text = "Text:";
             this.wikiLabel.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.wikiLabel.UseStyleColors = true;
             // 
             // linkLabel
             // 
             this.linkLabel.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.linkLabel.Location = new System.Drawing.Point(64, 249);
+            this.linkLabel.Location = new System.Drawing.Point(62, 249);
             this.linkLabel.MinimumSize = new System.Drawing.Size(0, 25);
             this.linkLabel.Name = "linkLabel";
             this.linkLabel.Size = new System.Drawing.Size(0, 25);
@@ -254,6 +254,7 @@
             this.wikiText.Location = new System.Drawing.Point(3, 277);
             this.wikiText.MaxLength = 475;
             this.wikiText.Name = "wikiText";
+            this.wikiText.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wikiText.Size = new System.Drawing.Size(482, 46);
             this.wikiText.TabIndex = 11;
             this.wikiText.Text = "";

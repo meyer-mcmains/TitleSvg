@@ -68,19 +68,14 @@ namespace TitleSvg
             if (hastitle == true)
             {
                 doc.Root.Element("title").Value = titleBox.Text;
-                getWiki();
                 doc.Root.Element("wiki").Value = wikiText.Text;
-                doc.Root.Element("link").Value = linkLabel.Text;
             }
             else
             {
                 XObject title = new XElement("title", titleBox.Text);
                 doc.Root.Add(title);
-                getWiki();
                 XObject wiki = new XElement("wiki", wikiText.Text);
                 doc.Root.Add(wiki);
-                XObject link = new XElement("link", linkLabel.Text);
-                doc.Root.Add(link);
                 hastitle = true;
             }
             doc.Save(path);
@@ -135,7 +130,6 @@ namespace TitleSvg
                 var doc = XDocument.Load(path);
                 titleBox.Text = doc.Root.Element("title").Value;
                 wikiText.Text = doc.Root.Element("wiki").Value;
-                linkLabel.Text = doc.Root.Element("link").Value;
                 changeButton.Enabled = false;
             }
             catch (Exception)
@@ -183,35 +177,6 @@ namespace TitleSvg
             return index;
         }
 
-        private void getWiki()
-        {
-            string format = Regex.Replace(titleBox.Text, "[_]", "_");
-            string link = "https://en.wikipedia.org/wiki/" + titleBox.Text;
-            HtmlWeb web = new HtmlWeb();
-            HtmlAgilityPack.HtmlDocument htmlDoc = web.Load(link);
-
-            try
-            {
-                if (htmlDoc.DocumentNode != null)
-                {
-                    linkLabel.Text = link;
-                    HtmlAgilityPack.HtmlNode paragraph = htmlDoc.DocumentNode.SelectSingleNode("//*[@id='mw-content-text']/p[1]");
-                    wikiText.Text = Regex.Replace(paragraph.InnerText, "[[(\\d)+]+]", "");   
-                }
-                else
-                {
-                    wikiText.ForeColor = Color.Red;
-                    wikiText.Text = "Error Reading Wiki.";
-                }
-            }
-            catch (Exception)
-            {
-                wikiText.ForeColor = Color.Red;
-                wikiText.Text = "Wikipedia does not have an article with this exact name.";
-            }
-
-            wikiChangeButton.Enabled = false;
-        }
 
         private void linkLabel_MouseClick(object sender, MouseEventArgs e)
         {
@@ -228,15 +193,7 @@ namespace TitleSvg
 
         private void wikiText_TextChanged(object sender, EventArgs e)
         {
-            wikiChangeButton.Enabled = true;
-            wikiText.Text = Truncate(wikiText.Text, wikiText.MaxLength);
-            
-        }
-
-        public static string Truncate(string value, int maxLength)
-        {
-            if (string.IsNullOrEmpty(value)) return value;
-            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
+            wikiChangeButton.Enabled = true; 
         }
 
 
