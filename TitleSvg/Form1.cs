@@ -40,6 +40,8 @@ namespace TitleSvg
                 forward.Enabled = true;
                 back.Enabled = true;
                 titleBox.Enabled = true;
+                wikiText.ReadOnly = false;
+                wikiChangeButton.Enabled = true;
                 ReadSvg();
             }
         }
@@ -213,6 +215,8 @@ namespace TitleSvg
                     file.Text = format;
                     titleBox.Text = "";
                     titleBox.Enabled = false;
+                    wikiText.ReadOnly = true;
+                    wikiChangeButton.Enabled = false;
                     text = txt.ReadLine();
                     webBrowser1.DocumentText = "<!DOCTYPE html><head><meta http-equiv='X-UA-Compatible' content='IE=9'/></head><html lang='en'>" +
                         "<body style='background-color: rgb(30, 30, 30);'>" +

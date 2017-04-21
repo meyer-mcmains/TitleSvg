@@ -254,6 +254,7 @@
             this.wikiText.Location = new System.Drawing.Point(3, 277);
             this.wikiText.MaxLength = 475;
             this.wikiText.Name = "wikiText";
+            this.wikiText.ReadOnly = true;
             this.wikiText.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wikiText.Size = new System.Drawing.Size(482, 46);
             this.wikiText.TabIndex = 11;
