@@ -138,6 +138,7 @@ namespace TitleSvg
             {
                 titleBox.Text = "Add A Title";
                 changeButton.Enabled = false;
+                wikiChangeButton.Enabled = false;
                 hastitle = false;
             }
         }
@@ -187,15 +188,23 @@ namespace TitleSvg
 
         private void wikiChangeButton_Click(object sender, EventArgs e)
         {
-            var doc = XDocument.Load(path);
-            doc.Root.Element("wiki").Value = wikiText.Text;
-            doc.Save(path);
-            wikiChangeButton.Enabled = false;
+            if (hastitle == true)
+            {
+                var doc = XDocument.Load(path);
+                doc.Root.Element("wiki").Value = wikiText.Text;
+                doc.Save(path);
+                wikiChangeButton.Enabled = false;
+            }
+            
         }
 
         private void wikiText_TextChanged(object sender, EventArgs e)
         {
-            wikiChangeButton.Enabled = true; 
+            if (hastitle == true)
+            {
+                wikiChangeButton.Enabled = true; 
+            }
+            
         }
 
 
